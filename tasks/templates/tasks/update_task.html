@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container edit">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <h3>Edit/Complete Task</h3>
+    
+                <form method="POST" action="">
+                    {% csrf_token %} {{form}}
+                    <input type="submit" name="Update Task" />
+                </form>
+                <a href="{% url 'list' %}">Cancel</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
