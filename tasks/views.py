@@ -1,6 +1,10 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from django.http import HttpResponse
 
-def index(request):
+from .models import *
+from .forms import *
+
+def list(request):
 	tasks = Task.objects.all()
 
 	form = TaskForm()
