@@ -29,12 +29,12 @@
               <div class="item-row">
                 <a
                   class="btn btn-sm btn btn-secondary"
-                  href="#"
+                  href="{% url 'update_task' task.id %}"
                   >Edit Items
                 </a>
                 <a
                   class="btn btn-sm btn btn-danger"
-                  href="#"
+                  href="{% url 'delete' task.id %}"
                   >Delete Items
                 </a>
 
