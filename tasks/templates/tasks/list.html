@@ -14,27 +14,18 @@
   <body>        
     <div class="container">
       <div class="row">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-md-6 mx-auto my-5">
           <div class="center-column">
             <form method="POST" action="/">
               {% csrf_token %} {{form.title}}
               <input class="btn btn-primary submit" type="submit" name="Create Task"/>
             </form>
             
-            <div class="todo-list">
+            <div>
               {% for task in tasks %}
               <div class="item-row">
-                <a
-                  class="btn btn-sm btn btn-secondary"
-                  href="{% url 'update_task' task.id %}"
-                  >Edit Items
-                </a>
-                <a
-                  class="btn btn-sm btn btn-danger"
-                  href="{% url 'delete' task.id %}"
-                  >Delete Items
-                </a>
-
+                <a class="btn btn-sm btn btn-secondary" href="{% url 'update_task' task.id %}">Edit</a>
+                <a class="btn btn-sm btn btn-danger" href="{% url 'delete' task.id %}">Delete</a>
                 {% if task.complete == True %}
                 <strike>{{task}}</strike>
                 {% else %}
